@@ -1,0 +1,10 @@
+
+.imgBorders {
+    width: 32px; 
+    height: 32px;
+    margin-top: 7px;
+}
+
+.title:hover {
+    text-decoration: none
+}
