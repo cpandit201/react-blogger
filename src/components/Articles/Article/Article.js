@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import Octicon, { Thumbsup, Comment } from '@primer/octicons-react';
+import Octicon, { Thumbsup } from '@primer/octicons-react';
 export default class Article extends Component {
     render() {
 
@@ -14,10 +14,10 @@ export default class Article extends Component {
         let profilePictureImgTag = 
             <a href="https://google.com">
                 <img class="avatar imgBorders mr-2 rounded" 
-                    alt="@cpandit201" 
+                    alt="" 
                     width="20" 
                     height="20" 
-                    src="https://avatars1.githubusercontent.com/u/42322819?s=60&amp;v=4"/>
+                    src={this.props.profileImgSource}/>
             </a>
         return (
                     <div class="media text-muted pt-3"> 
@@ -42,11 +42,12 @@ export default class Article extends Component {
                             <h5>
                                {tagBody}
                             </h5>
-                            <a href="https://here.com">53 <Octicon icon={Thumbsup} /></a> <a href="https://google.com">Like</a>
+                            
+                            {this.props.likes > 0 ? <a href="https://here.com">{this.props.likes}</a>  : "" }
+                            &nbsp;<a href="https://google.com"><Octicon icon={Thumbsup} /> Like</a>
                             &nbsp;&nbsp;&nbsp;&nbsp;
-                            <a href="https://here.com">60 <Octicon icon={Comment} /></a> <a href="https://google.com">Comment</a>
+                            {/* <a href="https://here.com">60 <Octicon icon={Comment} /></a> <a href="https://google.com">Comment</a> */}
                         </p>
-
                     </div>
         );
     }
